@@ -1,0 +1,975 @@
+{
+  "_comment": "CONTEXT: Sample test data for Brazilian Soccer Knowledge Graph",
+  "_purpose": "Provide realistic test data for schema validation and MCP tool development",
+  "_agent": "Researcher (swarm-1761784111350-vc2pgfssn)",
+  "_date": "2025-10-30",
+  "_status": "Research deliverable - ready for data loading pipeline",
+
+  "metadata": {
+    "version": "1.0",
+    "data_sources": [
+      "Kaggle Brazilian Football Matches",
+      "TheSportsDB",
+      "Historical records"
+    ],
+    "coverage": "Sample data representing key Brazilian soccer entities and relationships",
+    "purpose": "Schema validation and MCP tool testing"
+  },
+
+  "stadiums": [
+    {
+      "stadium_id": "S001",
+      "name": "Maracanã",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "capacity": 78838,
+      "opened_year": 1950,
+      "surface_type": "Grass",
+      "latitude": -22.9122,
+      "longitude": -43.2302,
+      "image_url": "https://example.com/maracana.jpg",
+      "notes": "Iconic stadium, hosted 1950 and 2014 World Cup finals"
+    },
+    {
+      "stadium_id": "S002",
+      "name": "Allianz Parque",
+      "city": "São Paulo",
+      "state": "SP",
+      "capacity": 43713,
+      "opened_year": 2014,
+      "surface_type": "Grass",
+      "latitude": -23.5272,
+      "longitude": -46.6823,
+      "image_url": "https://example.com/allianz.jpg",
+      "notes": "Palmeiras home stadium"
+    },
+    {
+      "stadium_id": "S003",
+      "name": "Neo Química Arena",
+      "city": "São Paulo",
+      "state": "SP",
+      "capacity": 49205,
+      "opened_year": 2014,
+      "surface_type": "Grass",
+      "latitude": -23.5455,
+      "longitude": -46.4730,
+      "image_url": "https://example.com/arena-corinthians.jpg",
+      "notes": "Corinthians home stadium, hosted 2014 World Cup opening"
+    },
+    {
+      "stadium_id": "S004",
+      "name": "Morumbi",
+      "city": "São Paulo",
+      "state": "SP",
+      "capacity": 66795,
+      "opened_year": 1960,
+      "surface_type": "Grass",
+      "latitude": -23.6000,
+      "longitude": -46.7200,
+      "image_url": "https://example.com/morumbi.jpg",
+      "notes": "São Paulo FC home stadium"
+    },
+    {
+      "stadium_id": "S005",
+      "name": "Vila Belmiro",
+      "city": "Santos",
+      "state": "SP",
+      "capacity": 16068,
+      "opened_year": 1916,
+      "surface_type": "Grass",
+      "latitude": -23.9528,
+      "longitude": -46.3344,
+      "image_url": "https://example.com/vila-belmiro.jpg",
+      "notes": "Historic Santos FC stadium, where Pelé played"
+    }
+  ],
+
+  "competitions": [
+    {
+      "competition_id": "C001",
+      "name": "Campeonato Brasileiro Série A",
+      "short_name": "Brasileirão",
+      "season": "2023",
+      "type": "League",
+      "tier": 1,
+      "country": "BR",
+      "start_date": "2023-04-15",
+      "end_date": "2023-12-06",
+      "total_rounds": 38,
+      "logo_url": "https://example.com/brasileirao.png"
+    },
+    {
+      "competition_id": "C002",
+      "name": "Copa do Brasil",
+      "short_name": "Copa do Brasil",
+      "season": "2023",
+      "type": "Cup",
+      "tier": 1,
+      "country": "BR",
+      "start_date": "2023-02-22",
+      "end_date": "2023-09-24",
+      "total_rounds": 7,
+      "logo_url": "https://example.com/copa-brasil.png"
+    },
+    {
+      "competition_id": "C003",
+      "name": "Campeonato Paulista",
+      "short_name": "Paulistão",
+      "season": "2023",
+      "type": "League",
+      "tier": 2,
+      "country": "BR",
+      "start_date": "2023-01-15",
+      "end_date": "2023-04-08",
+      "total_rounds": 12,
+      "logo_url": "https://example.com/paulistao.png"
+    },
+    {
+      "competition_id": "C004",
+      "name": "Copa Libertadores",
+      "short_name": "Libertadores",
+      "season": "2023",
+      "type": "Cup",
+      "tier": 1,
+      "country": "CONMEBOL",
+      "start_date": "2023-02-07",
+      "end_date": "2023-11-04",
+      "total_rounds": 8,
+      "logo_url": "https://example.com/libertadores.png"
+    }
+  ],
+
+  "teams": [
+    {
+      "team_id": "T001",
+      "name": "Clube de Regatas do Flamengo",
+      "short_name": "FLA",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "stadium_id": "S001",
+      "founded_year": 1895,
+      "colors": ["Red", "Black"],
+      "logo_url": "https://example.com/flamengo-logo.png",
+      "official_website": "https://www.flamengo.com.br",
+      "league_tier": 1
+    },
+    {
+      "team_id": "T002",
+      "name": "Sociedade Esportiva Palmeiras",
+      "short_name": "PAL",
+      "city": "São Paulo",
+      "state": "SP",
+      "stadium_id": "S002",
+      "founded_year": 1914,
+      "colors": ["Green", "White"],
+      "logo_url": "https://example.com/palmeiras-logo.png",
+      "official_website": "https://www.palmeiras.com.br",
+      "league_tier": 1
+    },
+    {
+      "team_id": "T003",
+      "name": "Sport Club Corinthians Paulista",
+      "short_name": "COR",
+      "city": "São Paulo",
+      "state": "SP",
+      "stadium_id": "S003",
+      "founded_year": 1910,
+      "colors": ["White", "Black"],
+      "logo_url": "https://example.com/corinthians-logo.png",
+      "official_website": "https://www.corinthians.com.br",
+      "league_tier": 1
+    },
+    {
+      "team_id": "T004",
+      "name": "São Paulo Futebol Clube",
+      "short_name": "SAO",
+      "city": "São Paulo",
+      "state": "SP",
+      "stadium_id": "S004",
+      "founded_year": 1930,
+      "colors": ["Red", "White", "Black"],
+      "logo_url": "https://example.com/saopaulo-logo.png",
+      "official_website": "https://www.saopaulofc.net",
+      "league_tier": 1
+    },
+    {
+      "team_id": "T005",
+      "name": "Santos Futebol Clube",
+      "short_name": "SAN",
+      "city": "Santos",
+      "state": "SP",
+      "stadium_id": "S005",
+      "founded_year": 1912,
+      "colors": ["White", "Black"],
+      "logo_url": "https://example.com/santos-logo.png",
+      "official_website": "https://www.santosfc.com.br",
+      "league_tier": 1
+    },
+    {
+      "team_id": "T006",
+      "name": "Fluminense Football Club",
+      "short_name": "FLU",
+      "city": "Rio de Janeiro",
+      "state": "RJ",
+      "stadium_id": "S001",
+      "founded_year": 1902,
+      "colors": ["Green", "Maroon", "White"],
+      "logo_url": "https://example.com/fluminense-logo.png",
+      "official_website": "https://www.fluminense.com.br",
+      "league_tier": 1
+    }
+  ],
+
+  "coaches": [
+    {
+      "coach_id": "CO001",
+      "name": "Jorge Jesus",
+      "birth_date": "1954-07-24",
+      "nationality": "Portuguese",
+      "coaching_license": "UEFA Pro",
+      "image_url": "https://example.com/jorge-jesus.jpg"
+    },
+    {
+      "coach_id": "CO002",
+      "name": "Abel Ferreira",
+      "birth_date": "1978-12-22",
+      "nationality": "Portuguese",
+      "coaching_license": "UEFA Pro",
+      "image_url": "https://example.com/abel-ferreira.jpg"
+    },
+    {
+      "coach_id": "CO003",
+      "name": "Fernando Diniz",
+      "birth_date": "1974-03-27",
+      "nationality": "Brazilian",
+      "coaching_license": "CBF Pro",
+      "image_url": "https://example.com/fernando-diniz.jpg"
+    }
+  ],
+
+  "players": [
+    {
+      "player_id": "P001",
+      "name": "Gabriel Barbosa",
+      "birth_date": "1996-08-30",
+      "nationality": "Brazilian",
+      "position": "Forward",
+      "jersey_number": 10,
+      "height_cm": 177,
+      "weight_kg": 73,
+      "preferred_foot": "Left",
+      "current_team_id": "T001",
+      "market_value_eur": 18000000,
+      "image_url": "https://example.com/gabigol.jpg",
+      "nickname": "Gabigol"
+    },
+    {
+      "player_id": "P002",
+      "name": "Everton Ribeiro",
+      "birth_date": "1989-04-10",
+      "nationality": "Brazilian",
+      "position": "Midfielder",
+      "jersey_number": 7,
+      "height_cm": 172,
+      "weight_kg": 68,
+      "preferred_foot": "Left",
+      "current_team_id": "T001",
+      "market_value_eur": 3500000,
+      "image_url": "https://example.com/everton-ribeiro.jpg"
+    },
+    {
+      "player_id": "P003",
+      "name": "Raphael Veiga",
+      "birth_date": "1995-06-19",
+      "nationality": "Brazilian",
+      "position": "Midfielder",
+      "jersey_number": 23,
+      "height_cm": 177,
+      "weight_kg": 72,
+      "preferred_foot": "Left",
+      "current_team_id": "T002",
+      "market_value_eur": 8000000,
+      "image_url": "https://example.com/raphael-veiga.jpg"
+    },
+    {
+      "player_id": "P004",
+      "name": "Endrick Felipe",
+      "birth_date": "2006-07-21",
+      "nationality": "Brazilian",
+      "position": "Forward",
+      "jersey_number": 9,
+      "height_cm": 173,
+      "weight_kg": 69,
+      "preferred_foot": "Left",
+      "current_team_id": "T002",
+      "market_value_eur": 60000000,
+      "image_url": "https://example.com/endrick.jpg",
+      "nickname": "Endrick"
+    },
+    {
+      "player_id": "P005",
+      "name": "Yuri Alberto",
+      "birth_date": "2001-03-18",
+      "nationality": "Brazilian",
+      "position": "Forward",
+      "jersey_number": 9,
+      "height_cm": 185,
+      "weight_kg": 80,
+      "preferred_foot": "Right",
+      "current_team_id": "T003",
+      "market_value_eur": 12000000,
+      "image_url": "https://example.com/yuri-alberto.jpg"
+    },
+    {
+      "player_id": "P006",
+      "name": "Cássio Ramos",
+      "birth_date": "1987-06-06",
+      "nationality": "Brazilian",
+      "position": "Goalkeeper",
+      "jersey_number": 12,
+      "height_cm": 195,
+      "weight_kg": 84,
+      "preferred_foot": "Right",
+      "current_team_id": "T003",
+      "market_value_eur": 2000000,
+      "image_url": "https://example.com/cassio.jpg",
+      "nickname": "Cássio"
+    },
+    {
+      "player_id": "P007",
+      "name": "Neymar da Silva Santos Júnior",
+      "birth_date": "1992-02-05",
+      "nationality": "Brazilian",
+      "position": "Forward",
+      "jersey_number": 10,
+      "height_cm": 175,
+      "weight_kg": 68,
+      "preferred_foot": "Right",
+      "current_team_id": null,
+      "market_value_eur": 40000000,
+      "image_url": "https://example.com/neymar.jpg",
+      "nickname": "Neymar Jr.",
+      "notes": "Historical player for Santos, moved to Europe in 2013"
+    },
+    {
+      "player_id": "P008",
+      "name": "Edson Arantes do Nascimento",
+      "birth_date": "1940-10-23",
+      "nationality": "Brazilian",
+      "position": "Forward",
+      "jersey_number": 10,
+      "height_cm": 173,
+      "weight_kg": 70,
+      "preferred_foot": "Right",
+      "current_team_id": null,
+      "image_url": "https://example.com/pele.jpg",
+      "nickname": "Pelé",
+      "notes": "Legendary player, retired"
+    }
+  ],
+
+  "matches": [
+    {
+      "match_id": "M001",
+      "date": "2023-11-15",
+      "time": "20:00:00",
+      "home_team_id": "T001",
+      "away_team_id": "T006",
+      "home_score": 2,
+      "away_score": 1,
+      "home_halftime_score": 1,
+      "away_halftime_score": 0,
+      "competition_id": "C001",
+      "stadium_id": "S001",
+      "attendance": 67123,
+      "referee": "Anderson Daronco",
+      "match_status": "Completed",
+      "weather_condition": "Clear",
+      "notes": "Classic Fla-Flu derby"
+    },
+    {
+      "match_id": "M002",
+      "date": "2023-11-12",
+      "time": "16:00:00",
+      "home_team_id": "T002",
+      "away_team_id": "T003",
+      "home_score": 1,
+      "away_score": 1,
+      "home_halftime_score": 0,
+      "away_halftime_score": 1,
+      "competition_id": "C001",
+      "stadium_id": "S002",
+      "attendance": 41890,
+      "referee": "Raphael Claus",
+      "match_status": "Completed",
+      "weather_condition": "Partly cloudy",
+      "notes": "Derby Paulista draw"
+    },
+    {
+      "match_id": "M003",
+      "date": "2023-11-08",
+      "time": "19:00:00",
+      "home_team_id": "T004",
+      "away_team_id": "T002",
+      "home_score": 0,
+      "away_score": 3,
+      "home_halftime_score": 0,
+      "away_halftime_score": 2,
+      "competition_id": "C001",
+      "stadium_id": "S004",
+      "attendance": 58345,
+      "referee": "Wilton Pereira Sampaio",
+      "match_status": "Completed",
+      "weather_condition": "Rain",
+      "notes": "Palmeiras dominant away win"
+    },
+    {
+      "match_id": "M004",
+      "date": "2011-06-05",
+      "time": "16:00:00",
+      "home_team_id": "T005",
+      "away_team_id": "T004",
+      "home_score": 3,
+      "away_score": 2,
+      "home_halftime_score": 2,
+      "away_halftime_score": 0,
+      "competition_id": "C003",
+      "stadium_id": "S005",
+      "attendance": 15234,
+      "referee": "Marcelo de Lima Henrique",
+      "match_status": "Completed",
+      "weather_condition": "Clear",
+      "notes": "Historic match - Neymar scored twice"
+    }
+  ],
+
+  "relationships": {
+    "plays_for": [
+      {
+        "player_id": "P001",
+        "team_id": "T001",
+        "start_date": "2019-01-01",
+        "end_date": null,
+        "jersey_number": 10,
+        "is_current": true,
+        "is_on_loan": false,
+        "loan_from_team_id": null
+      },
+      {
+        "player_id": "P002",
+        "team_id": "T001",
+        "start_date": "2017-08-01",
+        "end_date": null,
+        "jersey_number": 7,
+        "is_current": true,
+        "is_on_loan": false,
+        "loan_from_team_id": null
+      },
+      {
+        "player_id": "P003",
+        "team_id": "T002",
+        "start_date": "2016-01-01",
+        "end_date": null,
+        "jersey_number": 23,
+        "is_current": true,
+        "is_on_loan": false,
+        "loan_from_team_id": null
+      },
+      {
+        "player_id": "P004",
+        "team_id": "T002",
+        "start_date": "2022-07-01",
+        "end_date": null,
+        "jersey_number": 9,
+        "is_current": true,
+        "is_on_loan": false,
+        "loan_from_team_id": null
+      },
+      {
+        "player_id": "P005",
+        "team_id": "T003",
+        "start_date": "2022-01-15",
+        "end_date": null,
+        "jersey_number": 9,
+        "is_current": true,
+        "is_on_loan": false,
+        "loan_from_team_id": null
+      },
+      {
+        "player_id": "P006",
+        "team_id": "T003",
+        "start_date": "2012-01-01",
+        "end_date": null,
+        "jersey_number": 12,
+        "is_current": true,
+        "is_on_loan": false,
+        "loan_from_team_id": null
+      },
+      {
+        "player_id": "P007",
+        "team_id": "T005",
+        "start_date": "2009-03-07",
+        "end_date": "2013-06-03",
+        "jersey_number": 11,
+        "is_current": false,
+        "is_on_loan": false,
+        "loan_from_team_id": null,
+        "notes": "Youth academy graduate, moved to Barcelona"
+      },
+      {
+        "player_id": "P008",
+        "team_id": "T005",
+        "start_date": "1956-01-01",
+        "end_date": "1974-10-02",
+        "jersey_number": 10,
+        "is_current": false,
+        "is_on_loan": false,
+        "loan_from_team_id": null,
+        "notes": "Legendary career at Santos"
+      }
+    ],
+
+    "manages": [
+      {
+        "coach_id": "CO001",
+        "team_id": "T001",
+        "start_date": "2019-06-01",
+        "end_date": "2020-07-18",
+        "is_current": false,
+        "matches_managed": 62,
+        "wins": 44,
+        "draws": 10,
+        "losses": 8,
+        "notes": "Led Flamengo to 2019 Copa Libertadores and Brasileirão titles"
+      },
+      {
+        "coach_id": "CO002",
+        "team_id": "T002",
+        "start_date": "2020-10-30",
+        "end_date": null,
+        "is_current": true,
+        "matches_managed": 178,
+        "wins": 112,
+        "draws": 38,
+        "losses": 28,
+        "notes": "Won 2021 and 2022 Copa Libertadores with Palmeiras"
+      },
+      {
+        "coach_id": "CO003",
+        "team_id": "T006",
+        "start_date": "2022-04-09",
+        "end_date": null,
+        "is_current": true,
+        "matches_managed": 95,
+        "wins": 51,
+        "draws": 23,
+        "losses": 21,
+        "notes": "Led Fluminense to 2023 Copa Libertadores title"
+      }
+    ],
+
+    "scored_in": [
+      {
+        "player_id": "P001",
+        "match_id": "M001",
+        "minute": 34,
+        "goal_type": "Open-play",
+        "assisted_by_player_id": "P002",
+        "team_id": "T001",
+        "video_url": "https://example.com/goal1.mp4"
+      },
+      {
+        "player_id": "P001",
+        "match_id": "M001",
+        "minute": 67,
+        "goal_type": "Penalty",
+        "assisted_by_player_id": null,
+        "team_id": "T001",
+        "video_url": "https://example.com/goal2.mp4"
+      },
+      {
+        "player_id": "P003",
+        "match_id": "M002",
+        "minute": 78,
+        "goal_type": "Free-kick",
+        "assisted_by_player_id": null,
+        "team_id": "T002",
+        "video_url": "https://example.com/goal3.mp4"
+      },
+      {
+        "player_id": "P005",
+        "match_id": "M002",
+        "minute": 23,
+        "goal_type": "Header",
+        "assisted_by_player_id": null,
+        "team_id": "T003",
+        "video_url": "https://example.com/goal4.mp4"
+      },
+      {
+        "player_id": "P003",
+        "match_id": "M003",
+        "minute": 12,
+        "goal_type": "Open-play",
+        "assisted_by_player_id": "P004",
+        "team_id": "T002",
+        "video_url": "https://example.com/goal5.mp4"
+      },
+      {
+        "player_id": "P004",
+        "match_id": "M003",
+        "minute": 38,
+        "goal_type": "Open-play",
+        "assisted_by_player_id": "P003",
+        "team_id": "T002",
+        "video_url": "https://example.com/goal6.mp4"
+      },
+      {
+        "player_id": "P003",
+        "match_id": "M003",
+        "minute": 89,
+        "goal_type": "Penalty",
+        "assisted_by_player_id": null,
+        "team_id": "T002",
+        "video_url": "https://example.com/goal7.mp4"
+      },
+      {
+        "player_id": "P007",
+        "match_id": "M004",
+        "minute": 15,
+        "goal_type": "Open-play",
+        "assisted_by_player_id": null,
+        "team_id": "T005",
+        "video_url": "https://example.com/neymar-goal1.mp4",
+        "notes": "Young Neymar's breakthrough goal"
+      },
+      {
+        "player_id": "P007",
+        "match_id": "M004",
+        "minute": 42,
+        "goal_type": "Open-play",
+        "assisted_by_player_id": null,
+        "team_id": "T005",
+        "video_url": "https://example.com/neymar-goal2.mp4",
+        "notes": "Brilliant solo goal"
+      }
+    ],
+
+    "assisted_in": [
+      {
+        "player_id": "P002",
+        "match_id": "M001",
+        "minute": 34,
+        "scorer_player_id": "P001",
+        "assist_type": "Through-ball",
+        "team_id": "T001"
+      },
+      {
+        "player_id": "P004",
+        "match_id": "M003",
+        "minute": 12,
+        "scorer_player_id": "P003",
+        "assist_type": "Pass",
+        "team_id": "T002"
+      },
+      {
+        "player_id": "P003",
+        "match_id": "M003",
+        "minute": 38,
+        "scorer_player_id": "P004",
+        "assist_type": "Cross",
+        "team_id": "T002"
+      }
+    ],
+
+    "competed_in": [
+      {
+        "team_id": "T001",
+        "match_id": "M001",
+        "home_away": "HOME",
+        "final_score": 2,
+        "result": "Win"
+      },
+      {
+        "team_id": "T006",
+        "match_id": "M001",
+        "home_away": "AWAY",
+        "final_score": 1,
+        "result": "Loss"
+      },
+      {
+        "team_id": "T002",
+        "match_id": "M002",
+        "home_away": "HOME",
+        "final_score": 1,
+        "result": "Draw"
+      },
+      {
+        "team_id": "T003",
+        "match_id": "M002",
+        "home_away": "AWAY",
+        "final_score": 1,
+        "result": "Draw"
+      },
+      {
+        "team_id": "T004",
+        "match_id": "M003",
+        "home_away": "HOME",
+        "final_score": 0,
+        "result": "Loss"
+      },
+      {
+        "team_id": "T002",
+        "match_id": "M003",
+        "home_away": "AWAY",
+        "final_score": 3,
+        "result": "Win"
+      },
+      {
+        "team_id": "T005",
+        "match_id": "M004",
+        "home_away": "HOME",
+        "final_score": 3,
+        "result": "Win"
+      },
+      {
+        "team_id": "T004",
+        "match_id": "M004",
+        "home_away": "AWAY",
+        "final_score": 2,
+        "result": "Loss"
+      }
+    ],
+
+    "part_of": [
+      {
+        "match_id": "M001",
+        "competition_id": "C001",
+        "round": 35,
+        "phase": "Regular-season",
+        "is_knockout": false
+      },
+      {
+        "match_id": "M002",
+        "competition_id": "C001",
+        "round": 34,
+        "phase": "Regular-season",
+        "is_knockout": false
+      },
+      {
+        "match_id": "M003",
+        "competition_id": "C001",
+        "round": 33,
+        "phase": "Regular-season",
+        "is_knockout": false
+      },
+      {
+        "match_id": "M004",
+        "competition_id": "C003",
+        "round": 8,
+        "phase": "Regular-season",
+        "is_knockout": false
+      }
+    ],
+
+    "played_at": [
+      {
+        "match_id": "M001",
+        "stadium_id": "S001",
+        "attendance": 67123,
+        "capacity_percentage": 85.1
+      },
+      {
+        "match_id": "M002",
+        "stadium_id": "S002",
+        "attendance": 41890,
+        "capacity_percentage": 95.8
+      },
+      {
+        "match_id": "M003",
+        "stadium_id": "S004",
+        "attendance": 58345,
+        "capacity_percentage": 87.3
+      },
+      {
+        "match_id": "M004",
+        "stadium_id": "S005",
+        "attendance": 15234,
+        "capacity_percentage": 94.8
+      }
+    ],
+
+    "played_in": [
+      {
+        "player_id": "P001",
+        "match_id": "M001",
+        "team_id": "T001",
+        "minutes_played": 90,
+        "starting_lineup": true,
+        "position": "Forward",
+        "substituted_in_minute": null,
+        "substituted_out_minute": null
+      },
+      {
+        "player_id": "P002",
+        "match_id": "M001",
+        "team_id": "T001",
+        "minutes_played": 87,
+        "starting_lineup": true,
+        "position": "Midfielder",
+        "substituted_in_minute": null,
+        "substituted_out_minute": 87
+      },
+      {
+        "player_id": "P003",
+        "match_id": "M002",
+        "team_id": "T002",
+        "minutes_played": 90,
+        "starting_lineup": true,
+        "position": "Midfielder",
+        "substituted_in_minute": null,
+        "substituted_out_minute": null
+      },
+      {
+        "player_id": "P004",
+        "match_id": "M002",
+        "team_id": "T002",
+        "minutes_played": 25,
+        "starting_lineup": false,
+        "position": "Forward",
+        "substituted_in_minute": 65,
+        "substituted_out_minute": null
+      },
+      {
+        "player_id": "P005",
+        "match_id": "M002",
+        "team_id": "T003",
+        "minutes_played": 90,
+        "starting_lineup": true,
+        "position": "Forward",
+        "substituted_in_minute": null,
+        "substituted_out_minute": null
+      },
+      {
+        "player_id": "P006",
+        "match_id": "M002",
+        "team_id": "T003",
+        "minutes_played": 90,
+        "starting_lineup": true,
+        "position": "Goalkeeper",
+        "substituted_in_minute": null,
+        "substituted_out_minute": null
+      },
+      {
+        "player_id": "P007",
+        "match_id": "M004",
+        "team_id": "T005",
+        "minutes_played": 90,
+        "starting_lineup": true,
+        "position": "Forward",
+        "substituted_in_minute": null,
+        "substituted_out_minute": null
+      }
+    ],
+
+    "yellow_card_in": [
+      {
+        "player_id": "P002",
+        "match_id": "M001",
+        "minute": 56,
+        "reason": "Foul",
+        "team_id": "T001"
+      },
+      {
+        "player_id": "P005",
+        "match_id": "M002",
+        "minute": 78,
+        "reason": "Dissent",
+        "team_id": "T003"
+      }
+    ],
+
+    "transferred_to": [
+      {
+        "player_id": "P007",
+        "team_id": "T005",
+        "transfer_date": "2009-03-07",
+        "from_team_id": null,
+        "transfer_fee_eur": 0,
+        "transfer_type": "Youth-promotion",
+        "contract_duration_years": 4,
+        "notes": "Promoted from Santos youth academy"
+      },
+      {
+        "player_id": "P007",
+        "team_id": null,
+        "transfer_date": "2013-06-03",
+        "from_team_id": "T005",
+        "transfer_fee_eur": 57000000,
+        "transfer_type": "Permanent",
+        "contract_duration_years": 5,
+        "notes": "Transfer to FC Barcelona (external league - not tracked in this graph)"
+      }
+    ]
+  },
+
+  "test_queries": [
+    {
+      "category": "Simple Lookup",
+      "question": "Who scored goals for Flamengo in match M001?",
+      "expected_cypher": "MATCH (p:Player)-[scored:SCORED_IN {team_id: 'T001'}]->(m:Match {match_id: 'M001'}) RETURN p.name, scored.minute, scored.goal_type",
+      "expected_result": [
+        {"player": "Gabriel Barbosa", "minute": 34, "type": "Open-play"},
+        {"player": "Gabriel Barbosa", "minute": 67, "type": "Penalty"}
+      ]
+    },
+    {
+      "category": "Relationship Traversal",
+      "question": "What teams did Neymar play for?",
+      "expected_cypher": "MATCH (p:Player {player_id: 'P007'})-[r:PLAYS_FOR]->(t:Team) RETURN t.name, r.start_date, r.end_date ORDER BY r.start_date",
+      "expected_result": [
+        {"team": "Santos Futebol Clube", "start": "2009-03-07", "end": "2013-06-03"}
+      ]
+    },
+    {
+      "category": "Aggregation",
+      "question": "Who is the top scorer among sample matches?",
+      "expected_cypher": "MATCH (p:Player)-[scored:SCORED_IN]->(m:Match) RETURN p.name, count(scored) AS goals ORDER BY goals DESC LIMIT 1",
+      "expected_result": [
+        {"player": "Raphael Veiga", "goals": 3}
+      ]
+    },
+    {
+      "category": "Complex Multi-hop",
+      "question": "Which players assisted Raphael Veiga's goals?",
+      "expected_cypher": "MATCH (p:Player {player_id: 'P003'})<-[scored:SCORED_IN]-(m:Match)<-[assisted:ASSISTED_IN]-(assister:Player) WHERE scored.assisted_by_player_id = assister.player_id RETURN DISTINCT assister.name",
+      "expected_result": [
+        {"player": "Endrick Felipe"}
+      ]
+    }
+  ],
+
+  "data_validation_checks": [
+    {
+      "check_name": "All players have valid teams",
+      "cypher": "MATCH (p:Player) WHERE p.current_team_id IS NOT NULL AND NOT exists((p)-[:PLAYS_FOR {is_current: true}]->(:Team {team_id: p.current_team_id})) RETURN p.name, p.current_team_id",
+      "expected_count": 0
+    },
+    {
+      "check_name": "All matches have valid home and away teams",
+      "cypher": "MATCH (m:Match) WHERE NOT exists((:Team {team_id: m.home_team_id})) OR NOT exists((:Team {team_id: m.away_team_id})) RETURN m.match_id",
+      "expected_count": 0
+    },
+    {
+      "check_name": "Goal counts match final scores",
+      "cypher": "MATCH (m:Match {match_id: 'M001'}) WITH m, m.home_score AS recorded_score MATCH (p:Player)-[scored:SCORED_IN {team_id: m.home_team_id}]->(m) WITH m, recorded_score, count(scored) AS calculated_goals WHERE recorded_score <> calculated_goals RETURN m.match_id, recorded_score, calculated_goals",
+      "expected_count": 0
+    }
+  ],
+
+  "usage_notes": {
+    "loading": "Use Neo4j LOAD CSV or custom ETL scripts to import this data",
+    "validation": "Run data_validation_checks queries after loading to ensure referential integrity",
+    "extension": "This sample data can be extended with additional entities and relationships as needed",
+    "testing": "Use test_queries to validate MCP tool implementations"
+  }
+}
