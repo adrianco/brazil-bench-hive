@@ -6,7 +6,7 @@ See analysis.feature for full BDD scenarios
 import pytest
 from pytest_bdd import scenarios, given, when, then, parsers
 
-scenarios('../tests/features/analysis.feature')
+scenarios('features/analysis.feature')
 
 # GIVEN steps
 @given('the database is populated with sample data')

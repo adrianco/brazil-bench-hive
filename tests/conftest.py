@@ -26,7 +26,7 @@ from datetime import datetime
 TEST_NEO4J_URI = os.getenv("TEST_NEO4J_URI", "bolt://localhost:7687")
 TEST_NEO4J_USER = os.getenv("TEST_NEO4J_USER", "neo4j")
 TEST_NEO4J_PASSWORD = os.getenv("TEST_NEO4J_PASSWORD", "password")
-TEST_NEO4J_DATABASE = os.getenv("TEST_NEO4J_DATABASE", "brazil-kg-test")
+TEST_NEO4J_DATABASE = os.getenv("TEST_NEO4J_DATABASE", "brazil-kg")  # Community Edition - using main DB
 
 fake = Faker()
 

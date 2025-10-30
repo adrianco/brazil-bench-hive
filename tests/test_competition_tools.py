@@ -6,7 +6,7 @@ See competition.feature for full BDD scenarios
 import pytest
 from pytest_bdd import scenarios, given, when, then, parsers
 
-scenarios('../tests/features/competition.feature')
+scenarios('features/competition.feature')
 
 # GIVEN steps
 @given('I have valid competition data')

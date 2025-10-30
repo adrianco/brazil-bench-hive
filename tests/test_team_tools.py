@@ -15,7 +15,7 @@ import pytest
 from pytest_bdd import scenarios, given, when, then, parsers
 
 # Load all scenarios from team.feature
-scenarios('../tests/features/team.feature')
+scenarios('features/team.feature')
 
 
 # ============================================================================
