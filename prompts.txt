@@ -1,0 +1,5 @@
+# IGNORE THIS FILE
+
+npm install -g @anthropic-ai/claude-code
+claude --dangerously-skip-permissions
+npx claude-flow@alpha init --force
