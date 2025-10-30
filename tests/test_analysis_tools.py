@@ -5,6 +5,7 @@ See analysis.feature for full BDD scenarios
 
 import pytest
 from pytest_bdd import scenarios, given, when, then, parsers
+from steps.common_steps import *  # Import shared step definitions
 
 scenarios('analysis.feature')
 
@@ -244,7 +245,11 @@ def verify_player_count(count):
 @then('players should be ordered by goals descending')
 def verify_goal_order():
     for i in range(len(pytest.top_scorers) - 1):
-        assert pytest.top_scorers[i]["p"]["goals_scored"] >= pytest.top_scorers[i+1]["p"]["goals_scored"]
+        # Safely get goals_scored with default of 0 if not present
+        current_goals = pytest.top_scorers[i]["p"].get("goals_scored", 0) or 0
+        next_goals = pytest.top_scorers[i+1]["p"].get("goals_scored", 0) or 0
+        assert current_goals >= next_goals, \
+            f"Goals not in descending order: {current_goals} < {next_goals}"
 
 @then('the top player should have the most goals')
 def verify_top_scorer():

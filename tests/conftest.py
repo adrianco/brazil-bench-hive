@@ -122,11 +122,17 @@ def neo4j_session(neo4j_driver):
     """
     session = neo4j_driver.session(database=TEST_NEO4J_DATABASE)
 
-    yield session
-
-    # Cleanup: Remove all test data
+    # Clean BEFORE test for isolation
     with session.begin_transaction() as tx:
         tx.run("MATCH (n) DETACH DELETE n")
+        tx.commit()
+
+    yield session
+
+    # Cleanup: Remove all test data AFTER test
+    with session.begin_transaction() as tx:
+        tx.run("MATCH (n) DETACH DELETE n")
+        tx.commit()
 
     session.close()
 

@@ -5,6 +5,7 @@ See competition.feature for full BDD scenarios
 
 import pytest
 from pytest_bdd import scenarios, given, when, then, parsers
+from steps.common_steps import *  # Import shared step definitions
 
 scenarios('competition.feature')
 
@@ -136,7 +137,7 @@ def search_by_format(neo4j_session, format):
 
 @when(parsers.parse('I request competition history for "{team}"'))
 def get_team_competition_history(neo4j_session, team):
-    query = "MATCH (t:Team {name: $team})-[:COMPETES_IN]->(c:Competition) RETURN c"
+    query = "MATCH (t:Team {name: $team})-[:COMPETED_IN|COMPETES_IN]->(c:Competition) RETURN c"
     result = neo4j_session.run(query, team=team)
     pytest.team_comp_history = list(result)
 

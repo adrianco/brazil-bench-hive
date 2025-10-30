@@ -13,6 +13,7 @@ Context:
 
 import pytest
 from pytest_bdd import scenarios, given, when, then, parsers
+from steps.common_steps import *  # Import shared step definitions
 
 # Load all scenarios from team.feature
 scenarios('team.feature')
@@ -332,7 +333,7 @@ def bulk_import_teams(neo4j_session):
 def verify_team_created():
     """Verify team creation"""
     assert pytest.created_team is not None
-    assert "t" in pytest.created_team
+    assert "t" in pytest.created_team.keys()
 
 
 @then('the team should have an ID')
