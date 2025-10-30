@@ -16,7 +16,7 @@ from pytest_bdd import scenarios, given, when, then, parsers
 from datetime import datetime
 
 # Load all scenarios from player.feature
-scenarios('features/player.feature')
+scenarios('player.feature')
 
 
 # ============================================================================
